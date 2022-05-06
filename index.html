@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap" rel="stylesheet">
+
+    <title>Frontend Mentor | Intro section with dropdown navigation</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      
+      <header class="header">
+        <picture class="header__picture">
+          <source srcset="./images/logo.svg" ></source>
+          <img src="./images/logo.svg" alt="logo">
+        </picture>
+
+        <nav class="header__navbar">
+          <ul class="header__navbar__list">
+            <li class="header__navbar__list__item">
+              <details class="details">
+                <summary class="details__summary">Features</summary>
+                <ul class="details__list">
+                  <li class="details__list__item">Todo List</li>
+                  <li class="details__list__item">Calendar</li>
+                  <li class="details__list__item">Reminder</li>
+                  <li class="details__list__item">Pianning</li>
+                </ul>
+              </details>
+            </li>
+            <li class="header__navbar__list__item">
+              <details class="details">
+                <summary class="details__summary">Company</summary>
+                <ul class="details__list">
+                  <li class="details__list__item">History</li>
+                  <li class="details__list__item">Our Team</li>
+                  <li class="details__list__item">Blog</li>
+                </ul>
+              </details>
+            </li>
+            <li class="header__navbar__list__item">Careers</li>
+            <li class="header__navbar__list__item">About</li>
+            <li class="header__navbar__list__item"><button>Login</button></li>
+            <li class="header__navbar__list__item"><button>Register</button></li>
+          </ul>
+          <img src="./images/icon-close-menu.svg" class="header__navbar__exit">
+
+          </img>
+        </nav>
+      </header>
+    
+    <main class="main">
+      
+      <picture class="main picture">
+        <source media="(min-width: 700px)" srcset="./images/image-hero-desktop.png" >
+        <img src="./images/image-hero-mobile.png" alt="logo">
+      </picture>
+      <section class="main text-content">
+        <h1 class="text-content__h1">
+          Make remote work 
+        </h1>
+        <p class="text-content__p">
+          Get your team in sync, no matter your location.
+          Streamline processes, create team rituals, and watch productivity soar.
+        </p>
+        <button class="text-content__button">
+          Learn more
+        </button>
+      </section>
+      <section class="main enterprices">
+        
+      </section>
+      
+    </main>
+    
+    <!--  <footer class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </footer> -->
+  </div>
+  </body>
+</html>

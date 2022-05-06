@@ -1,0 +1,36 @@
+@use "../globals/" as c;
+
+.header {
+  width: 100%;
+  padding: 15px;
+  position: fixed;
+  top: 0;
+
+  &__navbar {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin: 0;
+      width: 50%;
+      background-color: c.$almost-white;
+      padding: 15vh 5vh;
+    }
+
+    &__exit {
+      width: 25px;
+      height: 25px;
+      position: absolute;
+      padding: 15px;
+    }
+  }
+}
