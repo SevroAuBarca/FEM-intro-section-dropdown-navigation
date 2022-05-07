@@ -38,11 +38,17 @@
           <img src="./images/logo.svg" alt="logo">
         </picture>
 
+        <div class="header__hamburguer">
+          <div class="header__hamburguer__item"></div>
+          <div class="header__hamburguer__item"></div>
+          <div class="header__hamburguer__item"></div>
+        </div>
+
         <nav class="header__navbar">
           <ul class="header__navbar__list">
             <li class="header__navbar__list__item">
               <details class="details">
-                <summary class="details__summary">Features</summary>
+                <summary class="details__summary down">Features</summary>
                 <ul class="details__list">
                   <li class="details__list__item">Todo List</li>
                   <li class="details__list__item">Calendar</li>
@@ -53,7 +59,7 @@
             </li>
             <li class="header__navbar__list__item">
               <details class="details">
-                <summary class="details__summary">Company</summary>
+                <summary class="details__summary down">Company</summary>
                 <ul class="details__list">
                   <li class="details__list__item">History</li>
                   <li class="details__list__item">Our Team</li>
@@ -63,12 +69,14 @@
             </li>
             <li class="header__navbar__list__item">Careers</li>
             <li class="header__navbar__list__item">About</li>
-            <li class="header__navbar__list__item"><button>Login</button></li>
-            <li class="header__navbar__list__item"><button>Register</button></li>
+            <li class="header__navbar__list__item">
+              <button class=" button button__login">Login</button>
+            </li>
+            <li class="header__navbar__list__item">
+              <button class="button button__register">Register</button>
+            </li>
           </ul>
           <img src="./images/icon-close-menu.svg" class="header__navbar__exit">
-
-          </img>
         </nav>
       </header>
     
@@ -101,5 +109,6 @@
       Coded by <a href="#">Your Name Here</a>.
     </footer> -->
   </div>
+  <script src="./src/js/index.js"></script>
   </body>
 </html>

@@ -2,10 +2,36 @@
 
 .header {
   width: 100%;
-  padding: 15px;
-  position: fixed;
-  top: 0;
 
+  position: relative;
+  display: flex;
+
+  &__picture {
+    img {
+      padding: 15px;
+    }
+  }
+
+  &__hamburguer {
+    width: 30px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: auto;
+    padding: 15px;
+    &__item {
+      width: 30px;
+      height: 3px;
+
+      background: url("../../../images/icon-menu.svg");
+    }
+  }
+  &__navbar.open {
+    transform: translateX(0%);
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: transform 300ms ease-in-out, background-color 1000ms ease-in-out;
+  }
   &__navbar {
     width: 100%;
     min-height: 100vh;
@@ -13,8 +39,10 @@
     justify-content: flex-end;
     position: fixed;
     top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0);
+    transform: translateX(100%);
+    transition: transform 300ms ease-in-out, background-color 300ms ease-in-out;
+    color: c.$medium-gray;
 
     &__list {
       display: flex;
@@ -23,7 +51,72 @@
       margin: 0;
       width: 50%;
       background-color: c.$almost-white;
-      padding: 15vh 5vh;
+      padding: 13vh 4vh;
+
+      &__item:first-child {
+        .details__list__item:first-child::before {
+          content: url("../../../images/icon-todo.svg");
+          margin-right: 10px;
+        }
+        .details__list__item:nth-child(2):before {
+          content: url("../../../images/icon-calendar.svg");
+          margin-right: 10px;
+        }
+        .details__list__item:nth-child(3)::before {
+          content: url("../../../images/icon-reminders.svg");
+          margin-right: 10px;
+        }
+        .details__list__item:last-child::before {
+          content: url("../../../images/icon-planning.svg");
+          margin-right: 10px;
+        }
+      }
+
+      &__item:first-child,
+      &__item:nth-child(2) {
+        .details {
+          &__summary {
+            outline: none;
+            list-style: none;
+            &::-webkit-details-marker {
+              display: none;
+            }
+          }
+
+          &__list {
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+          }
+
+          .down::after {
+            content: url("../../../images/icon-arrow-down.svg");
+            margin-left: 10px;
+            transform: rotate(180deg);
+            transition: transform 300ms ease-in;
+          }
+          .up::after {
+            content: url("../../../images/icon-arrow-up.svg");
+            margin-left: 10px;
+            transform: rotate(180deg);
+            transition: transform 300ms ease-in;
+          }
+        }
+      }
+
+      &__item {
+        .button {
+          all: unset;
+          width: 100%;
+          text-align: center;
+          padding: 10px 0;
+          border-radius: 10px;
+          &__register {
+            border: 1.5px solid c.$medium-gray;
+          }
+        }
+      }
     }
 
     &__exit {
