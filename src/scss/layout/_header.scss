@@ -2,11 +2,95 @@
 
 .header {
   width: 100%;
-
   position: relative;
   display: flex;
 
+  @media (min-width: 850px) {
+    .header__hamburguer {
+      display: none;
+    }
+    .header__navbar {
+      min-height: 10vh;
+      transform: translateX(0%);
+      position: relative;
+
+      &__list {
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        gap: 30px;
+        padding: 0;
+
+        &__item:not(.header__navbar__list__item:first-child, .header__navbar__list__item:nth-child(2)):hover {
+          color: c.$almost-black;
+        }
+
+        &__item {
+          .button {
+            padding: 10px 10px;
+            cursor: pointer;
+            &__login:hover {
+              color: c.$almost-black;
+            }
+            &__register:hover {
+              color: c.$almost-black;
+              border-color: c.$almost-black;
+            }
+          }
+        }
+        &__item:first-child {
+          margin-left: 30px;
+          .details {
+            &__list {
+              transform: translate(-25%, 10%);
+            }
+          }
+        }
+        &__item:nth-child(2) {
+          .details {
+            &__list {
+              transform: translateY(13%);
+            }
+          }
+        }
+        &__item:nth-child(5) {
+          margin-left: auto;
+        }
+        &__item:nth-child(6) {
+          margin-right: 50px;
+        }
+
+        &__item:first-child,
+        &__item:nth-child(2) {
+          .details {
+            &__summary {
+              cursor: pointer;
+              &:hover {
+                color: c.$almost-black;
+              }
+            }
+
+            &__list {
+              width: 100px;
+              position: absolute;
+              border-radius: 10px;
+              box-shadow: 0px 8px 30px 7px rgba(105, 105, 105, 0.41);
+              -webkit-box-shadow: 0px 8px 30px 7px rgba(105, 105, 105, 0.41);
+              -moz-box-shadow: 0px 8px 30px 7px rgba(105, 105, 105, 0.41);
+              background-color: c.$almost-white;
+            }
+          }
+        }
+      }
+      &__exit {
+        display: none;
+      }
+    }
+  }
+
   &__picture {
+    display: flex;
+    align-items: center;
     img {
       padding: 15px;
     }
@@ -50,9 +134,8 @@
       gap: 15px;
       margin: 0;
       width: 50%;
-      background-color: c.$almost-white;
       padding: 13vh 4vh;
-
+      background: c.$almost-white;
       &__item:first-child {
         .details__list__item:first-child::before {
           content: url("../../../images/icon-todo.svg");
@@ -75,6 +158,7 @@
       &__item:first-child,
       &__item:nth-child(2) {
         .details {
+          position: relative;
           &__summary {
             outline: none;
             list-style: none;
@@ -93,14 +177,10 @@
           .down::after {
             content: url("../../../images/icon-arrow-down.svg");
             margin-left: 10px;
-            transform: rotate(180deg);
-            transition: transform 300ms ease-in;
           }
           .up::after {
             content: url("../../../images/icon-arrow-up.svg");
             margin-left: 10px;
-            transform: rotate(180deg);
-            transition: transform 300ms ease-in;
           }
         }
       }
@@ -113,7 +193,7 @@
           padding: 10px 0;
           border-radius: 10px;
           &__register {
-            border: 1.5px solid c.$medium-gray;
+            border: 2px solid c.$medium-gray;
           }
         }
       }

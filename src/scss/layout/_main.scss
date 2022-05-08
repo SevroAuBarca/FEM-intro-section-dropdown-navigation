@@ -1,7 +1,102 @@
+@use "../globals/" as c;
+
 .main {
-  &.picture {
-    img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__picture {
+    &__img {
       width: 100%;
+      max-width: 500px;
+    }
+  }
+
+  &__text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 30px 15px;
+    &__h1 {
+      font-size: 2rem;
+      color: c.$almost-black;
+    }
+    &__p {
+      color: c.$medium-gray;
+      font-size: 1rem;
+      text: {
+        align: center;
+      }
+      line-height: 1.5;
+    }
+    &__button {
+      all: unset;
+      padding: 13px 17px;
+      color: c.$almost-white;
+      background: c.$almost-black;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 700;
+      border: 1px solid c.$almost-black;
+    }
+    &__enterprices {
+      width: 100%;
+      display: grid;
+      align-items: center;
+      justify-items: center;
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: 10px;
+      img {
+        width: 60px;
+      }
+    }
+  }
+
+  @media (min-width: 850px) {
+    & {
+      flex-direction: row-reverse;
+      gap: 20px;
+      padding: 2% 5% 0;
+
+      &__picture {
+        margin-right: auto;
+        &__img {
+          content: url("../../../images/image-hero-desktop.png");
+          height: 70vh;
+        }
+      }
+
+      &__text-content {
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        align-items: flex-start;
+        gap: 25px;
+
+        &__h1 {
+          width: 31vw;
+          font-size: 4rem;
+        }
+        &__p {
+          text-align: left;
+          width: 31vw;
+        }
+
+        &__button:hover {
+          color: c.$almost-black;
+          background-color: c.$almost-white;
+          border: 1px solid c.$medium-gray;
+        }
+
+        &__enterprices {
+          padding-top: 30px;
+          width: 80%;
+          align-items: start;
+          justify-items: start;
+        }
+      }
     }
   }
 }
